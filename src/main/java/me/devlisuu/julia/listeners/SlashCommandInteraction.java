@@ -11,7 +11,7 @@ import java.util.Date;
 public class SlashCommandInteraction extends ListenerAdapter {
     @Override
     public void onSlashCommandInteraction(@NotNull SlashCommandInteractionEvent event) {
-        Julia.LOGGER.debug(event.getName());
+        Julia.LOGGER.info(String.format("%s ran command! (%s)", event.getUser().getName(), event.getName()));
         switch(event.getName()) {
             case "uptime":
                 long uptime = new Date().getTime() - Julia.botStartDate.getTime();
