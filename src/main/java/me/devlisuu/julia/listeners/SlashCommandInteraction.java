@@ -14,7 +14,7 @@ public class SlashCommandInteraction extends ListenerAdapter {
         Julia.LOGGER.info(String.format("%s ran command! (%s)", event.getUser().getName(), event.getName()));
         switch(event.getName()) {
             case "uptime":
-                long uptime = new Date().getTime() - Julia.botStartDate.getTime();
+                long uptime = new Date().getTime() - Julia.startDate.getTime();
                 event.reply(String.format("Uptime: %s", TimeFormater.formatTime(uptime))).setEphemeral(true).queue();
                 break;
             case "memory":

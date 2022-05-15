@@ -17,7 +17,7 @@ public class Julia {
     public static final Logger LOGGER = LoggerFactory.getLogger("Julia");
     public JDA jda;
     public static Guild testGuild;
-    public static Date botStartDate;
+    public static Date startDate;
 
     public Julia(String token) {
         try {
@@ -33,7 +33,7 @@ public class Julia {
             e.printStackTrace();
         }
 
-        botStartDate = new Date();
+        startDate = new Date();
 
         testGuild = jda.getGuildById(848556986102186015L);
         if (testGuild != null) {
