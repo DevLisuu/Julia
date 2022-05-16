@@ -12,7 +12,7 @@ import java.util.Map;
 public class SlashCommandInteraction extends ListenerAdapter {
     @Override
     public void onSlashCommandInteraction(@NotNull SlashCommandInteractionEvent event) {
-        Map<String, Command> commandMap = CommandsManager.getCommandMap();
+        Map<String, Command> commandMap = CommandsManager.getGuildCommandMap();
 
         if(commandMap.containsKey(event.getName())) {
             Command command = commandMap.get(event.getName());
