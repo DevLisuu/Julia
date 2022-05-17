@@ -20,6 +20,7 @@ public class CommandsManager {
 
         CommandsManager.addCommandToGuildMap(new UptimeCommand());
         CommandsManager.addCommandToGuildMap(new MemoryCommand());
+        CommandsManager.addCommandToGuildMap(new SayCommand());
     }
 
     private static void addCommandToGuildMap(Command commandClass) {
@@ -28,7 +29,7 @@ public class CommandsManager {
 
     public static void registerGuildCommands(Guild guild) {
         List<CommandData> commandDataList = CommandsManager.getGuildCommandMap().values()
-                .stream().map(Command::getData).toList();
+                .stream().map(Command::getCommandData).toList();
 
         guild.updateCommands().addCommands(commandDataList).queue();
         Julia.LOGGER.info("Guild commands registered successfully!");

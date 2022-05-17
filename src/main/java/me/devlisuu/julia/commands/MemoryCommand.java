@@ -1,15 +1,18 @@
 package me.devlisuu.julia.commands;
 
-import me.devlisuu.julia.Julia;
-import me.devlisuu.julia.util.TimeFormater;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
-
-import java.util.Date;
+import net.dv8tion.jda.api.interactions.commands.build.CommandData;
+import net.dv8tion.jda.api.interactions.commands.build.Commands;
 
 public class MemoryCommand extends Command{
     public MemoryCommand() {
         name = "memory";
         description = "Julia's memory usage";
+    }
+
+    @Override
+    public CommandData getCommandData() {
+        return Commands.slash(this.name, this.description);
     }
 
     @Override

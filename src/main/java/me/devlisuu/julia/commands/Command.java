@@ -2,7 +2,6 @@ package me.devlisuu.julia.commands;
 
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.interactions.commands.build.CommandData;
-import net.dv8tion.jda.api.interactions.commands.build.Commands;
 
 public abstract class Command {
     protected String name;
@@ -12,9 +11,7 @@ public abstract class Command {
         return this.name;
     }
 
-    public abstract boolean execute(SlashCommandInteractionEvent event);
+    protected abstract CommandData getCommandData();
 
-    protected CommandData getData() {
-        return Commands.slash(this.name, this.description);
-    }
+    public abstract boolean execute(SlashCommandInteractionEvent event);
 }
