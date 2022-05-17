@@ -7,7 +7,7 @@ plugins {
 mainClassName = 'me.devlisuu.julia.Main'
 version = bot_version
 
-sourceCompatibility = targetCompatibility = 1.8
+sourceCompatibility = targetCompatibility = 17
 
 repositories {
     mavenCentral()
