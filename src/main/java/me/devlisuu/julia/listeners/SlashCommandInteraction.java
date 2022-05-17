@@ -17,12 +17,18 @@ public class SlashCommandInteraction extends ListenerAdapter {
         if(commandMap.containsKey(event.getName())) {
             Command command = commandMap.get(event.getName());
 
-            boolean result = command.execute(event);
-            if(result) {
-                Julia.LOGGER.info(String.format("%s ran command! (%s)", event.getUser().getName(), event.getName()));
-            }else {
-                Julia.LOGGER.error(String.format("Command execution failed! (%s)", event));
+            try {
+                boolean success = command.execute(event);
+                if(!success) throw new Exception();
+
+                Julia.LOGGER.info(
+                        String.format("%s ran %s command! (%s)", event.getUser().getName(), event.getName(), event.getOptions()));
+            } catch(Exception e) {
+                Julia.LOGGER.error(
+                        String.format("Command execution failed! %s %s)", event.getName(), event.getOptions()));
+                e.printStackTrace();
             }
+
         }
     }
 }
