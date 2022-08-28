@@ -1,5 +1,7 @@
-# Julia
+# Julia (Julka)
 Discord bot whatever
+
+Should be called Julka but can't be bothered to edit every mention of Julia
 
 ## Dependencies
 - [JDA](https://github.com/DV8FromTheWorld/JDA)
