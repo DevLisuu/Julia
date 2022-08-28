@@ -11,6 +11,9 @@ gradle-app.setting
 # Cache of project
 .gradletasknamecache
 
+# Intellij IDEA
+.idea
+
 # Eclipse Gradle plugin generated files
 # Eclipse Core
 .project

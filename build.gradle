@@ -1,13 +1,13 @@
 plugins {
     id'java'
     id'application'
-    id'com.github.johnrengelman.shadow' version '5.2.0'
+    id'com.github.johnrengelman.shadow' version '7.1.2'
 }
 
 mainClassName = 'me.devlisuu.julia.Main'
 version = bot_version
 
-sourceCompatibility = targetCompatibility = 16
+sourceCompatibility = targetCompatibility = 17
 
 repositories {
     mavenCentral()
