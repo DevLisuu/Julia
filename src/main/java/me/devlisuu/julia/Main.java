@@ -5,7 +5,7 @@ import io.github.cdimascio.dotenv.Dotenv;
 public class Main {
 
     public static void main(String[] args) {
-        Dotenv dotenv = Dotenv.load();
+        Dotenv dotenv = Dotenv.configure().ignoreIfMissing().load();
         String TOKEN;
 
         if(dotenv.get("TOKEN") == null) {
