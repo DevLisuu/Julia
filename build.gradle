@@ -17,8 +17,9 @@ repositories {
 }
 
 dependencies {
-    implementation('ch.qos.logback:logback-classic:1.2.11')
+    implementation('ch.qos.logback:logback-classic:1.2.11') // might be unused
     implementation("net.dv8tion:JDA:$jda_version") {exclude module: 'opus-java'}
+    implementation('io.github.cdimascio:dotenv-java:2.2.4')
 }
 
 shadowJar {
