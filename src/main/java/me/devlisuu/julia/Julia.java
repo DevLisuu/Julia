@@ -1,6 +1,6 @@
 package me.devlisuu.julia;
 
-import me.devlisuu.julia.commands.CommandsManager;
+import me.devlisuu.julia.command.CommandsManager;
 import me.devlisuu.julia.listeners.SlashCommandInteraction;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
@@ -16,7 +16,7 @@ import java.util.Date;
 public class Julia {
     public static final Logger LOGGER = LoggerFactory.getLogger("Julia");
     public JDA jda;
-    public static Date startDate;
+    public static Date botStartTime;
 
     public Julia(String token) {
         try {
@@ -25,14 +25,16 @@ public class Julia {
                     .setStatus(OnlineStatus.ONLINE)
                     .setActivity(Activity.watching("Twitter"))
                     .build();
+
             jda.awaitReady();
-            startDate = new Date();
+            botStartTime = new Date();
         } catch(LoginException | InterruptedException e) {
             LOGGER.error("Login failed!");
             e.printStackTrace();
         }
 
         CommandsManager.createCommandMaps();
+
         Guild testGuild = jda.getGuildById(848556986102186015L);
 
         if (testGuild != null) {

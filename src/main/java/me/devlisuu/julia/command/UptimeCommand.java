@@ -1,4 +1,4 @@
-package me.devlisuu.julia.commands;
+package me.devlisuu.julia.command;
 
 import me.devlisuu.julia.Julia;
 import me.devlisuu.julia.util.TimeFormater;
@@ -21,7 +21,7 @@ public class UptimeCommand extends Command{
 
     @Override
     public boolean execute(SlashCommandInteractionEvent event) {
-        long uptime = new Date().getTime() - Julia.startDate.getTime();
+        long uptime = new Date().getTime() - Julia.botStartTime.getTime();
         event.reply(String.format("Uptime: %s", TimeFormater.formatTime(uptime))).setEphemeral(true).queue();
         return true;
     }

@@ -40,7 +40,7 @@ public class TimeFormater {
             }
             buf.append(seconds);
             buf.append(" Seconds");
-            time = time % SECOND;
+            // time = time % SECOND;
         }
 
         return buf.toString();

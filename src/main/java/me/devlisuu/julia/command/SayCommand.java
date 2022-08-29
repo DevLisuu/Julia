@@ -1,4 +1,4 @@
-package me.devlisuu.julia.commands;
+package me.devlisuu.julia.command;
 
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
@@ -21,8 +21,8 @@ public class SayCommand extends Command{
 
     @Override
     public boolean execute(SlashCommandInteractionEvent event) {
-        String message = Objects.requireNonNull(event.getOption("message")).getAsString();
-        event.reply(message).setEphemeral(true).queue();
+        final String message = Objects.requireNonNull(event.getOption("message")).getAsString();
+        event.reply(String.format("Your message was: %s", message)).setEphemeral(true).queue();
         return true;
     }
 }
